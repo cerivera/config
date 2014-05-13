@@ -397,3 +397,6 @@ function! <SID>BufcloseCloseIt()
 endfunction
 nnoremap y "+y
 vnoremap y "+y
+
+au BufReadPost *.partial set syntax=html
+
