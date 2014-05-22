@@ -41,7 +41,10 @@ set noswapfile
 filetype plugin indent on
 autocmd filetype python set expandtab
 
-" colorscheme mustang
+" set background=light
+" colorscheme solarized
+colorscheme desert
+set background=dark
 
 " Save some keystrokes by eliminating the shift key
 nnoremap ; :
@@ -67,5 +70,19 @@ map <C-l> <C-w>l
 " Clear search with ,/
 nmap <silent> ,/ :nohlsearch<CR>
 
+" Quick tab open
+nmap <silent> ,tt :tabedit<CR>
+
+" Navigate page
+nmap <silent> ,j <C-F>
+nmap <silent> ,k <C-B>
+
 " Force sudo write!
 cmap w!! w !sudo tee % >/dev/null
+
+" Files that should be treated as HTML
+au BufNewFile,BufRead *.partial set ft=html
+au BufNewFile,BufRead *.less set filetype=less
+
+" Set font
+:set guifont=Monaco:h12
