@@ -86,3 +86,16 @@ au BufNewFile,BufRead *.less set filetype=less
 
 " Set font
 :set guifont=Monaco:h12
+
+" Command T exclusions
+set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
+
+" Set dictionary
+set dictionary=/usr/share/dict/words
+
+" Enable spell checker
+set spell
+
+" hotkeys for cycling grep results
+nmap <silent> <C-N> :cn<CR>zv
+nmap <silent> <C-P> :cp<CR>zv
