@@ -13,6 +13,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " hide unsaved buffers
 set hidden
 
+:set cursorline
 set nowrap " don't wrap lines
 set tabstop=4 " a tab is four spaces
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -40,11 +41,12 @@ set noswapfile
 
 filetype plugin indent on
 autocmd filetype python set expandtab
+autocmd filetype javascript set expandtab
+autocmd filetype html set expandtab
 
-" set background=light
-" colorscheme solarized
-colorscheme desert
-set background=dark
+set background=light
+colorscheme summerfruit256
+" set background=dark
 
 " Save some keystrokes by eliminating the shift key
 nnoremap ; :
@@ -71,7 +73,7 @@ map <C-l> <C-w>l
 nmap <silent> ,/ :nohlsearch<CR>
 
 " Quick tab open
-nmap <silent> ,tt :tabedit<CR>
+nmap <silent> ,nt :tabedit<CR>
 
 " Navigate page
 nmap <silent> ,j <C-F>
@@ -85,7 +87,7 @@ au BufNewFile,BufRead *.partial set ft=html
 au BufNewFile,BufRead *.less set filetype=less
 
 " Set font
-:set guifont=Monaco:h12
+:set guifont=Monaco:h13
 
 " Command T exclusions
 set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
@@ -94,7 +96,7 @@ set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*
 set dictionary=/usr/share/dict/words
 
 " Enable spell checker
-set spell
+" set spell
 
 " hotkeys for cycling grep results
 nmap <silent> <C-N> :cn<CR>zv
