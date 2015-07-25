@@ -1,0 +1,23 @@
+[user]
+    name = Carlos Rivera
+    email = rivera.utx@gmail.com
+[core]
+    autocrlf = false
+    editor = vim
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    cm = commit -m
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+[color]
+branch = auto
+diff = auto
+interactive = auto
+status = auto
+ui = always
+
+[format]
+pretty = "format:%C(yellow)%h%Creset %Cred(%an)%Creset %s %Cgreen(%cr)%Creset %n"
