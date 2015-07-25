@@ -20,8 +20,6 @@ call vundle#end()            " required
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 
-" Use pathogen to easily modify the runtime path plugins under the ~/.vim/bundle directory
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -67,7 +65,6 @@ autocmd filetype javascript set expandtab
 autocmd filetype html set expandtab
 
 set background=light
-colorscheme summerfruit256
 " set background=dark
 
 " Save some keystrokes by eliminating the shift key
