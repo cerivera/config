@@ -3,25 +3,21 @@
 #### Prerequisites
 
 - Vundle
+- NPM
 
-    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-- Vim Instant Markdown
-
-	https://github.com/suan/vim-instant-markdown
-
-
-#### Install Plugins
+#### Download/Install Plugins
 
 In vim: `:PluginInstall`
+
+#### Install Vim-Instant-Markdown
+
+https://github.com/suan/vim-instant-markdown
 
 #### Command-T Compilation
 
 	$ cd ~/.vim/bundle/command-t/ruby/command-t
 	$ ruby extconf.rb
 	$ make
-
-
 
 ## Git
 

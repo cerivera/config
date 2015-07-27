@@ -1,10 +1,16 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+
+" Colors
+Plugin 'flazz/vim-colorschemes'
+
+" Go
+Plugin 'fatih/vim-go'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -138,3 +144,11 @@ set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 " Turn on FTPlugin
 filetype plugin indent on
 
+" Disable Markdown folding
+let g:vim_markdown_folding_disabled=1
+
+set noruler
+set laststatus=2
+
+" Set Color
+colorscheme Tomorrow
