@@ -21,7 +21,9 @@ https://github.com/suan/vim-instant-markdown
 
 ## Git
 
-    $ cp config/gitconfig ~/.gitconfig
+    $ ln -s config/gitconfig ~/.gitconfig
+    $ ln -s config/gitignore ~/.gitignore_global
+    $ git config --global core.excludesfile ~/.gitignore_global
 
 
 	
