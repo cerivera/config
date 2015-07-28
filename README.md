@@ -1,5 +1,7 @@
 ## Vim
 
+    $ ln -s /path/to/config/vimrc ~/.vimrc
+
 #### Prerequisites
 
 - Vundle
@@ -21,10 +23,6 @@ https://github.com/suan/vim-instant-markdown
 
 ## Git
 
-    $ ln -s config/gitconfig ~/.gitconfig
-    $ ln -s config/gitignore ~/.gitignore_global
-    $ git config --global core.excludesfile ~/.gitignore_global
+    $ ln -s /path/to/config/gitconfig ~/.gitconfig
+    $ ln -s /path/to/config/gitignore ~/.gitignore_global
 
-
-	
-	
