@@ -9,6 +9,9 @@ Plugin 'gmarik/Vundle.vim'
 " Colors
 Plugin 'flazz/vim-colorschemes'
 
+" Dockerfile syntax
+Plugin 'ekalinin/Dockerfile.vim'
+
 " Go
 Plugin 'fatih/vim-go'
 
@@ -18,6 +21,9 @@ Plugin 'plasticboy/vim-markdown'
 
 " Command-t
 Plugin 'git://git.wincent.com/command-t.git'
+
+" Proto
+Bundle 'uarun/vim-protobuf'
 
 call vundle#end()
 
@@ -117,7 +123,7 @@ au BufNewFile,BufRead *.partial set ft=html
 au BufNewFile,BufRead *.less set filetype=less
 
 " Set font
-:set guifont=Monaco:h11
+:set guifont=Monaco:h13
 
 " Command T exclusions
 set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
@@ -152,3 +158,7 @@ set laststatus=2
 
 " Set Color
 colorscheme Tomorrow
+
+" Indentation by filetype
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
