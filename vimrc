@@ -134,6 +134,10 @@ set dictionary=/usr/share/dict/words
 " Enable spell checker
 " set spell
 
+" Enable spell checker and line wrapping for markdown files
+autocmd BufNewFile,BufRead *.md set spell wrap linebreak
+
+
 " hotkeys for cycling grep results
 nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
