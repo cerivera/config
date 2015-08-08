@@ -161,7 +161,10 @@ set noruler
 set laststatus=2
 
 " Set Color
-colorscheme Tomorrow
+" colorscheme Tomorrow
+" colorscheme Chasing_Logic
+" colorscheme PaperColor
+colorscheme Tomorrow-Night
 
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
