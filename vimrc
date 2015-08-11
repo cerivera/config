@@ -24,6 +24,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " Proto
 Bundle 'uarun/vim-protobuf'
+Bundle 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -131,11 +132,12 @@ set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*
 " Set dictionary
 set dictionary=/usr/share/dict/words
 
-" Enable spell checker
-" set spell
+" Disable spell checker
+:set nospell
 
 " Enable spell checker and line wrapping for markdown files
 autocmd BufNewFile,BufRead *.md set spell wrap linebreak
+autocmd BufNewFile,BufRead *.rst set spell wrap linebreak
 
 
 " hotkeys for cycling grep results
@@ -169,3 +171,9 @@ colorscheme Tomorrow-Night
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
+" NERDTree
+nmap <silent> ,w :NERDTreeToggle<CR>
+nmap <silent> ,m :help NERDTreeMappings<CR>
+
+" Color right margin column
+:set colorcolumn=80
