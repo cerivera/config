@@ -1,6 +1,6 @@
 [user]
     name = Carlos Rivera
-    email = rivera.utx@gmail.com
+    email = crivera@underarmour.com
 [core]
     autocrlf = false
     editor = vim
@@ -22,3 +22,15 @@ ui = always
 
 [format]
 pretty = "format:%C(yellow)%h%Creset %Cred(%an)%Creset %s %Cgreen(%cr)%Creset %n"
+[merge]
+	tool = gvimdiff
+[difftool "gvimdiff"]
+	path = /usr/local/bin/mvimdiff
+[mergetool "gvimdiff"]
+	path = /usr/local/bin/mvimdiff
+[mergetool]
+	prompt = false
+[difftool]
+	prompt = false
+[diff]
+	tool = gvimdiff

@@ -124,7 +124,7 @@ au BufNewFile,BufRead *.partial set ft=html
 au BufNewFile,BufRead *.less set filetype=less
 
 " Set font
-:set guifont=Monaco:h13
+:set guifont=Consolas:h14
 
 " Command T exclusions
 set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
@@ -136,9 +136,8 @@ set dictionary=/usr/share/dict/words
 :set nospell
 
 " Enable spell checker and line wrapping for markdown files
-autocmd BufNewFile,BufRead *.md set spell wrap linebreak
+autocmd BufNewFile,BufRead *.md set spell wrap linebreak colorcolumn=
 autocmd BufNewFile,BufRead *.rst set spell wrap linebreak
-
 
 " hotkeys for cycling grep results
 nmap <silent> <C-N> :cn<CR>zv
@@ -166,7 +165,8 @@ set laststatus=2
 " colorscheme Tomorrow
 " colorscheme Chasing_Logic
 " colorscheme PaperColor
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+" colorscheme chocolate
 
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
@@ -176,4 +176,4 @@ nmap <silent> ,w :NERDTreeToggle<CR>
 nmap <silent> ,m :help NERDTreeMappings<CR>
 
 " Color right margin column
-:set colorcolumn=80
+" :set colorcolumn=100
