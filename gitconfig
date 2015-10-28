@@ -22,15 +22,9 @@ ui = always
 
 [format]
 pretty = "format:%C(yellow)%h%Creset %Cred(%an)%Creset %s %Cgreen(%cr)%Creset %n"
+[diff]
+	tool = vimdiff
 [merge]
-	tool = gvimdiff
-[difftool "gvimdiff"]
-	path = /usr/local/bin/mvimdiff
-[mergetool "gvimdiff"]
-	path = /usr/local/bin/mvimdiff
-[mergetool]
-	prompt = false
+	tool = vimdiff
 [difftool]
 	prompt = false
-[diff]
-	tool = gvimdiff

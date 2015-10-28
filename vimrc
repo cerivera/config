@@ -15,6 +15,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 " Go
 Plugin 'fatih/vim-go'
 
+" Scala
+Plugin 'derekwyatt/vim-scala'
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -79,6 +82,7 @@ set noswapfile
 
 filetype plugin indent on
 autocmd filetype python set expandtab
+
 autocmd filetype javascript set expandtab
 autocmd filetype html set expandtab
 
@@ -165,8 +169,7 @@ set laststatus=2
 " colorscheme Tomorrow
 " colorscheme Chasing_Logic
 " colorscheme PaperColor
-" colorscheme Tomorrow-Night
-" colorscheme chocolate
+ colorscheme Tomorrow-Night
 
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
@@ -177,3 +180,6 @@ nmap <silent> ,m :help NERDTreeMappings<CR>
 
 " Color right margin column
 " :set colorcolumn=100
+
+
+com! FormatJSON %!python -m json.tool
