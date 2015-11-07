@@ -29,6 +29,9 @@ Plugin 'git://git.wincent.com/command-t.git'
 Bundle 'uarun/vim-protobuf'
 Bundle 'scrooloose/nerdtree'
 
+" Haskell
+Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
+
 call vundle#end()
 
 " " Brief help
@@ -166,10 +169,10 @@ set noruler
 set laststatus=2
 
 " Set Color
-" colorscheme Tomorrow
+colorscheme Tomorrow
 " colorscheme Chasing_Logic
 " colorscheme PaperColor
- colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
 
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
@@ -179,7 +182,7 @@ nmap <silent> ,w :NERDTreeToggle<CR>
 nmap <silent> ,m :help NERDTreeMappings<CR>
 
 " Color right margin column
-" :set colorcolumn=100
+:set colorcolumn=100
 
 
 com! FormatJSON %!python -m json.tool
