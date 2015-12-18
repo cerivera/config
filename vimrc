@@ -32,6 +32,18 @@ Bundle 'scrooloose/nerdtree'
 " Haskell
 Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 
+" Ack
+Plugin 'mileszs/ack.vim'
+
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+
+" Pep 8
+Bundle 'andviro/flake8-vim'
+
+" Whitespace
+Plugin 'ntpeters/vim-better-whitespace' 
+
 call vundle#end()
 
 " " Brief help
@@ -123,6 +135,8 @@ nmap <silent> ,nt :tabedit<CR>
 nmap <silent> ,j <C-F>
 nmap <silent> ,k <C-B>
 
+nmap <silent> ,y :SyntasticToggleMode<return>
+
 " Force sudo write!
 cmap w!! w !sudo tee % >/dev/null
 
@@ -132,6 +146,7 @@ au BufNewFile,BufRead *.less set filetype=less
 
 " Set font
 :set guifont=Consolas:h14
+" :set guifont=Consolas:h18
 
 " Command T exclusions
 set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
@@ -169,10 +184,12 @@ set noruler
 set laststatus=2
 
 " Set Color
-colorscheme Tomorrow
+" colorscheme Tomorrow
 " colorscheme Chasing_Logic
 " colorscheme PaperColor
-" colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
+" colorscheme gruvbox
+" colorscheme zenburn
 
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
@@ -184,5 +201,19 @@ nmap <silent> ,m :help NERDTreeMappings<CR>
 " Color right margin column
 :set colorcolumn=100
 
-
+" Format JSON with :FormatJSON
 com! FormatJSON %!python -m json.tool
+
+" syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+" Vims new relative line numbers
+"set relativenumber 
+"set number 
