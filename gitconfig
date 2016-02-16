@@ -28,3 +28,5 @@ pretty = "format:%C(yellow)%h%Creset %Cred(%an)%Creset %s %Cgreen(%cr)%Creset %n
 	tool = vimdiff
 [difftool]
 	prompt = false
+[push]
+	default = simple

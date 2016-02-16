@@ -16,7 +16,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 
 " Scala
-Plugin 'derekwyatt/vim-scala'
+" Plugin 'derekwyatt/vim-scala'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -36,13 +36,19 @@ Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 Plugin 'mileszs/ack.vim'
 
 " Syntax checker
-Plugin 'scrooloose/syntastic'
-
-" Pep 8
-Bundle 'andviro/flake8-vim'
+" Plugin 'scrooloose/syntastic'
 
 " Whitespace
-Plugin 'ntpeters/vim-better-whitespace' 
+Plugin 'ntpeters/vim-better-whitespace'
+
+" Pep 8
+" Bundle 'andviro/flake8-vim'
+
+" Jedi-vim (autocompletion)
+" Plugin 'davidhalter/jedi-vim'
+
+" vim-pyenv < 3.5.1
+" Plugin 'lambdalisue/vim-pyenv'
 
 call vundle#end()
 
@@ -71,6 +77,7 @@ set hidden
 
 :set cursorline
 set nowrap " don't wrap lines
+set expandtab
 set tabstop=4 " a tab is four spaces
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set autoindent " always set autoindenting on
@@ -133,7 +140,9 @@ nmap <silent> ,nt :tabedit<CR>
 
 " Navigate page
 nmap <silent> ,j <C-F>
+vmap <silent> ,j <C-F>
 nmap <silent> ,k <C-B>
+vmap <silent> ,k <C-B>
 
 nmap <silent> ,y :SyntasticToggleMode<return>
 
@@ -186,8 +195,8 @@ set laststatus=2
 " Set Color
 " colorscheme Tomorrow
 " colorscheme Chasing_Logic
-" colorscheme PaperColor
-colorscheme Tomorrow-Night
+colorscheme PaperColor
+" colorscheme Tomorrow-Night
 " colorscheme gruvbox
 " colorscheme zenburn
 
@@ -205,15 +214,19 @@ nmap <silent> ,m :help NERDTreeMappings<CR>
 com! FormatJSON %!python -m json.tool
 
 " syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 
 " Vims new relative line numbers
-"set relativenumber 
-"set number 
+"set relativenumber
+"set number
+
+" Command-T config
+let g:CommandTWildIgnore=&wildignore . ",*.pyc,env/*,__pycache__/*"
+
