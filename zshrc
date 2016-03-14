@@ -92,20 +92,21 @@ JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 alias cdu='cd ~/projects/ua'
 alias cdp='cd ~/projects/ua/panama'
 alias cdd='cd ~/projects/ua/svc_discover'
-alias cdds='cd ~/projects/ua/svc_discover_search'
 alias ez='vim ~/.zshrc'
 alias ev='vim ~/.vimrc'
 alias sz='source ~/.zshrc'
 alias dm='docker-machine'
 alias dco='docker-compose'
 alias dk='docker'
+alias dk-api-bash='dk exec -it $(docker ps | grep svcdiscover_api | tr -s " " | cut -d " " -f 1) /bin/bash'
 alias py351='docker run --rm -i -t python:3.5.1 /bin/bash'
 alias rm-localdev='docker-machine rm localdev'
 alias new-localdev='docker-machine create localdev --driver virtualbox --virtualbox-cpu-count "4" --virtualbox-memory "4096" --virtualbox-disk-size "60000"'
 alias env-localdev='eval $(docker-machine env localdev)'
-alias clean-docker='docker images -aq -f dangling=true | xargs docker rmi --force && docker volume ls -qf dangling=true | xargs docker volume rm'
-alias mysql-dk='mysql -uadmin -padmin -h$(dm ip localdev) -P23306'
-alias mysqldump-dk='mysqldump -d -uadmin -padmin -h$(dm ip localdev) -P23306 discover > ~/projects/ua/svc_discover/docker/mysql/structure.sql'
+alias dk-clean='docker images -aq -f dangling=true | xargs docker rmi --force && docker volume ls -qf dangling=true | xargs docker volume rm'
+alias dk-mysql='mysql -uadmin -padmin -h$(dm ip localdev) -P23306'
+alias dk-mysqldump='mysqldump -d -uadmin -padmin -h$(dm ip localdev) -P23306 discover > ~/projects/ua/svc_discover/docker/mysql/structure.sql'
+alias dk-mysql-reset='dk-mysql -e "drop database discover; create database discover"'
 
 if [ "$(dm status localdev)" = "Running" ]; then
     env-localdev
@@ -199,6 +200,33 @@ function reset_2fa ()
 {
     ssh -t salt.uacf.io sudo ssh -t openvpnas@internal-vpn.uacf.io sudo /usr/local/openvpn_as/scripts/sacli --user $1 GoogleAuthRegen
 }
+
+function dk-clean-containers ()
+{
+    if [ -n "$(dk ps -q)" ]
+    then
+        dk stop $(dk ps -q)
+    fi
+
+    if [ -n "$(dk ps -aq)" ]
+    then
+        dk rm $(dk ps -aq)
+    fi
+}
+
+
+function dk-clean-all ()
+{
+    docker_clean_containers
+
+    if [ -n "$(dk images -q)" ]
+    then
+        dk rmi -f $(dk images -q)
+    fi
+}
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

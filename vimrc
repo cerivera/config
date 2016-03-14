@@ -15,40 +15,34 @@ Plugin 'ekalinin/Dockerfile.vim'
 " Go
 Plugin 'fatih/vim-go'
 
-" Scala
-" Plugin 'derekwyatt/vim-scala'
-
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-
-" Command-t
-Plugin 'git://git.wincent.com/command-t.git'
 
 " Proto
 Bundle 'uarun/vim-protobuf'
 Bundle 'scrooloose/nerdtree'
 
-" Haskell
-Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
-
 " Ack
 Plugin 'mileszs/ack.vim'
 
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+
 " Syntax checker
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 
 " Pep 8
-" Bundle 'andviro/flake8-vim'
+Bundle 'andviro/flake8-vim'
 
 " Jedi-vim (autocompletion)
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 " vim-pyenv < 3.5.1
-" Plugin 'lambdalisue/vim-pyenv'
+Plugin 'lambdalisue/vim-pyenv'
 
 call vundle#end()
 
@@ -63,7 +57,11 @@ call vundle#end()
 " " Put your non-Plugin stuff after this line
 
 syntax on
+
 filetype plugin indent on
+
+" Command-P Setup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " change the mapleader from \ to ,
 let mapleader=","
@@ -94,7 +92,7 @@ set incsearch " show search matches as you type
 
 set history=1000 " remember more ommands and search history
 set undolevels=1000 " use many levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.jpg,*.gif,*.jar,__pycache__/*,env/*
 set title " change the terminal's title
 set visualbell " don't beep
 set noerrorbells "don't beep
@@ -108,8 +106,8 @@ autocmd filetype python set expandtab
 autocmd filetype javascript set expandtab
 autocmd filetype html set expandtab
 
-set background=light
-" set background=dark
+" set background=light
+set background=dark
 
 " Save some keystrokes by eliminating the shift key
 nnoremap ; :
@@ -157,8 +155,7 @@ au BufNewFile,BufRead *.less set filetype=less
 :set guifont=Consolas:h14
 " :set guifont=Consolas:h18
 
-" Command T exclusions
-set wildignore+=*.png,*.o,*.jpg,*.pdf,dist/**,build/**,*.pyc,*.jpg,*.gif,*.jar,*.class,*.bak,*.swp
+" Fuzzyfinder ignore
 
 " Set dictionary
 set dictionary=/usr/share/dict/words
@@ -192,14 +189,6 @@ let g:vim_markdown_folding_disabled=1
 set noruler
 set laststatus=2
 
-" Set Color
-" colorscheme Tomorrow
-" colorscheme Chasing_Logic
-colorscheme PaperColor
-" colorscheme Tomorrow-Night
-" colorscheme gruvbox
-" colorscheme zenburn
-
 " Indentation by filetype
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
@@ -214,19 +203,10 @@ nmap <silent> ,m :help NERDTreeMappings<CR>
 com! FormatJSON %!python -m json.tool
 
 " syntastic config
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-
-" Vims new relative line numbers
-"set relativenumber
-"set number
-
-" Command-T config
-let g:CommandTWildIgnore=&wildignore . ",*.pyc,env/*,__pycache__/*"
-
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
