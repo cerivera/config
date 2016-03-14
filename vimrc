@@ -63,6 +63,8 @@ filetype plugin indent on
 " Command-P Setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+colorschem PaperColor
+
 " change the mapleader from \ to ,
 let mapleader=","
 
@@ -129,6 +131,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Command-P Shortcut
+map <silent> ,t :CtrlP<CR>
 
 " Clear search with ,/
 nmap <silent> ,/ :nohlsearch<CR>
