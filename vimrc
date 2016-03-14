@@ -41,8 +41,8 @@ Bundle 'andviro/flake8-vim'
 " Jedi-vim (autocompletion)
 Plugin 'davidhalter/jedi-vim'
 
-" vim-pyenv < 3.5.1
-Plugin 'lambdalisue/vim-pyenv'
+" CtrlP
+Plugin 'https://github.com/kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -61,7 +61,7 @@ syntax on
 filetype plugin indent on
 
 " Command-P Setup
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 colorschem PaperColor
 
