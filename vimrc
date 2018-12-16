@@ -12,34 +12,8 @@ Plugin 'flazz/vim-colorschemes'
 " Dockerfile syntax
 Plugin 'ekalinin/Dockerfile.vim'
 
-" Go
-Plugin 'fatih/vim-go'
-
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-
-" Proto
-Bundle 'uarun/vim-protobuf'
-Bundle 'scrooloose/nerdtree'
-
-" Ack
-Plugin 'mileszs/ack.vim'
-
-" Elixir
-Plugin 'elixir-lang/vim-elixir'
-
-" Syntax checker
-Plugin 'scrooloose/syntastic'
-
 " Whitespace
 Plugin 'ntpeters/vim-better-whitespace'
-
-" Pep 8
-Bundle 'andviro/flake8-vim'
-
-" Jedi-vim (autocompletion)
-Plugin 'davidhalter/jedi-vim'
 
 " CtrlP
 Plugin 'https://github.com/kien/ctrlp.vim'
@@ -57,8 +31,6 @@ call vundle#end()
 " " Put your non-Plugin stuff after this line
 
 syntax on
-
-filetype plugin indent on
 
 " Command-P Setup
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -108,9 +80,6 @@ autocmd filetype python set expandtab
 autocmd filetype javascript set expandtab
 autocmd filetype html set expandtab
 
-" set background=light
-set background=dark
-
 " Save some keystrokes by eliminating the shift key
 nnoremap ; :
 
@@ -147,8 +116,6 @@ vmap <silent> ,j <C-F>
 nmap <silent> ,k <C-B>
 vmap <silent> ,k <C-B>
 
-nmap <silent> ,y :SyntasticToggleMode<return>
-
 " Force sudo write!
 cmap w!! w !sudo tee % >/dev/null
 
@@ -179,9 +146,6 @@ nmap <silent> <C-P> :cp<CR>zv
 " JSON support
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
-" RAML support
-autocmd BufNewFile,BufRead *.raml set ft=yaml
-
 " Set statusline
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
@@ -207,11 +171,4 @@ nmap <silent> ,m :help NERDTreeMappings<CR>
 " Format JSON with :FormatJSON
 com! FormatJSON %!python -m json.tool
 
-" syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+set background=dark
