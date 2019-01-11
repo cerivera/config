@@ -217,7 +217,7 @@ function dk-clean-containers ()
 
 function dk-clean-all ()
 {
-    docker_clean_containers
+    dk-clean-containers
 
     if [ -n "$(dk images -q)" ]
     then
